@@ -1,0 +1,7 @@
+.product img {
+    width: 100px;
+    height: auto;
+}
+.product img:hover {
+    border: 5px solid pink;
+}
