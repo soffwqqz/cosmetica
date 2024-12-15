@@ -79,8 +79,8 @@
 
 
         updateCart();
-    -->
-            < form id = "order-form" >
+    -
+        <form id="order-form">
             <div>
                 <label for="name">Ім'я:</label>
                 <input type="text" id="name" name="name" required>
@@ -107,9 +107,9 @@
             </div>
 
             <button type="submit" id="place-order-btn">Оформити замовлення</button>
-        </form >
+        </form>
 
-        <!-- Повідомлення про успішне оформлення замовлення -->
+       
         <div id="order-confirmation" style="display: none;">
             <h3>Дякуємо за ваше замовлення!</h3>
             <p>Ваше замовлення було успішно оформлено. Ми зв'яжемося з вами найближчим часом для підтвердження.</p>
@@ -127,15 +127,14 @@
     const orderConfirmation = document.getElementById('order-confirmation');
     
     orderForm.addEventListener('submit', function(event) {
-        event.preventDefault();
+        event.preventDefault(); 
         const formData = new FormData(orderForm);
         
         
         orderConfirmation.style.display = 'block';
-        orderForm.reset(); 
+        orderForm.reset();
     });
-    </script>
+</script>
 
 </body>
-
 </html>
