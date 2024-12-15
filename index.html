@@ -1,73 +1,341 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Beautify-Магазин краси</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Люксові косметичні продукти - Beautify</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-<header>
-  <div class="logo">
-  <h1>Beautify</h1>
-</div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Головна</a></li>
-      <li><a href="pomady.html">Помада</a></li>
-      <li><a href="toniky.html">Тоніки</a></li>
-      <li><a href="pro-nas.html">Про нас</a></li>
-      <li><a href="kontakty.html">Контакти</a></li>
-    </ul>
-  </nav>
-</header>
-<section class="promo"> 
-  <h2>Акції місяця!</h2>
-<div class="promo-cards">
-  <div class="promo-card">
-  <img src="https://www.brocard.ua/media/promotions/img/-/4/eyJ3IjoxMjgwLCJoIjo3MjAsIm8iOiJcL3Byb21vdGlvbnNcL2ltZ1wvLVwvNFwvLTQwX2F0dHJhY3RpdmVfZGlzY291bnRzXzE3X2FjdGlvbl8xMDYweDQwOF91a3JfMS5qcGcifQ==/-40_attractive_discounts_17_action_1060x408_ukr_1.jpg" alt="Акція 1">
-  <h3>Знижка 40% на всі помади</h3>
-  <p>Забери свою помаду з великими знижками!Акція триває до кінця місяця.</p>
-  <a href="pomady.html" class="btn">Переглянути помади</a>
-</div>
-<div class="promo-card">
-  <h3>Подарунок при покупці крему</h3>
-  <p>Отримай подарунок при покупці крему на суму понад 500 грн.</p>
-  <a href="kremy.html" class="btn">Переглянути креми</a>
-</div>
-</div>
-</section>
-<main>
-  <section id="products">
-    <h2>Популярні товари</h2>
-    <div class="product">
-      <img src="https://abeautybar.com.ua/content/images/41/604x760l80mc0/super-krem-dlya-litsa-moisturizer-super-face-cream-3lab-65969874483336.webp"
-        alt="Крем для обличчя">
-      <h3>Супер крем для обличчя Moisturizer Super Face Cream 3Lab</h3>
-      <p>36 052,00 грн</p>
-      <button>Купити</button>
+  <header>
+    <div class="logo">
+      <h1>Beautify</h1>
+      <p>Магазин краси</p>
     </div>
-    <div class="product">
-    <img src="https://misoshop.com.ua/content/images/29/600x600l80nn30/17246467961239.webp" alt="Помада">
-    <h4>Блиск для губ Rhode Peptide Lip Tint Espresso</h4>
-    <p>1 300 грн</p>
-    <button>Купити</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="luxury-products.html">Косметика</a></li>
+        <li><a href="luxury-lipsticks.html">Помади</a></li>
+        <li><a href="luxury-powders.html">Пудри</a></li>
+        <li><a href="luxury-concealers.html">Консилери</a></li>
+        <li><a href="luxury-eyeshadows.html">Тіні</a></li>
+        <li><a href="luxury-foundations.html">Тоналки</a></li>
+        <li><a href="luxury-mascaras.html">Туші</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Пошук товарів..." onkeyup="searchProducts()">
+    </div>
+  </header>
+
+  <section>
+    <h2>Люксові косметичні продукти</h2>
+    <div class="luxury-products" id="product-list">
+
+      <!-- Помади -->
+      <h3>Люксові помади</h3>
+      <div class="product-card">
+        <img src="assets/luxury-lipstick1.jpg" alt="Chanel Rouge Allure Velvet">
+        <h4>Chanel Rouge Allure Velvet</h4>
+        <p>Елегантна помада з матовим фінішем, стійка та комфортна.</p>
+        <p><strong>Ціна:</strong> 1200 грн</p>
+        <p><strong>Склад:</strong> Вітамін E, масло ши, парафін</p>
+        <button class="button" onclick="addToCart('Chanel Rouge Allure Velvet', 1200)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-lipstick2.jpg" alt="Dior Rouge Dior">
+        <h4>Dior Rouge Dior</h4>
+        <p>Яскрава помада, що дарує стійкий колір і комфорт на весь день.</p>
+        <p><strong>Ціна:</strong> 1500 грн</p>
+        <p><strong>Склад:</strong> Масло ши, вітаміни</p>
+        <button class="button" onclick="addToCart('Dior Rouge Dior', 1500)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-lipstick3.jpg" alt="Yves Saint Laurent Rouge Pur Couture">
+        <h4>Yves Saint Laurent Rouge Pur Couture</h4>
+        <p>Люксовий продукт, що подарує насичений колір і бездоганний фініш.</p>
+        <p><strong>Ціна:</strong> 1600 грн</p>
+        <p><strong>Склад:</strong> Масло ши, антиоксиданти</p>
+        <button class="button" onclick="addToCart('Yves Saint Laurent Rouge Pur Couture', 1600)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-lipstick4.jpg" alt="Givenchy Le Rouge">
+        <h4>Givenchy Le Rouge</h4>
+        <p>Ідеальний відтінок для створення розкішного образу.</p>
+        <p><strong>Ціна:</strong> 1700 грн</p>
+        <p><strong>Склад:</strong> Масло авокадо, пантенол</p>
+        <button class="button" onclick="addToCart('Givenchy Le Rouge', 1700)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-lipstick5.jpg" alt="Tom Ford Lip Color">
+        <h4>Tom Ford Lip Color</h4>
+        <p>Елегантна помада для створення шикарного образу.</p>
+        <p><strong>Ціна:</strong> 2200 грн</p>
+        <p><strong>Склад:</strong> Масло жожоба, вітаміни</p>
+        <button class="button" onclick="addToCart('Tom Ford Lip Color', 2200)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-lipstick6.jpg" alt="Gucci Rouge à Lèvres Satin">
+        <h4>Gucci Rouge à Lèvres Satin</h4>
+        <p>Помада з шовковистим фінішем, яка зберігає інтенсивність кольору.</p>
+        <p><strong>Ціна:</strong> 2000 грн</p>
+        <p><strong>Склад:</strong> Масло ши, антиоксиданти</p>
+        <button class="button" onclick="addToCart('Gucci Rouge à Lèvres Satin', 2000)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-lipstick7.jpg" alt="Chanel Rouge Coco Shine">
+        <h4>Chanel Rouge Coco Shine</h4>
+        <p>Ідеальний вибір для тих, хто любить природний, блискучий ефект.</p>
+        <p><strong>Ціна:</strong> 1400 грн</p>
+        <p><strong>Склад:</strong> Вітамін E, масло ши</p>
+        <button class="button" onclick="addToCart('Chanel Rouge Coco Shine', 1400)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-lipstick8.jpg" alt="Dior Addict Lipstick">
+        <h4>Dior Addict Lipstick</h4>
+        <p>Розкішна помада для ефекту глибокого кольору та блиску.</p>
+        <p><strong>Ціна:</strong> 1700 грн</p>
+        <p><strong>Склад:</strong> Вітамін E, гліцерин</p>
+        <button class="button" onclick="addToCart('Dior Addict Lipstick', 1700)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-lipstick9.jpg" alt="Lancôme L'Absolu Rouge">
+        <h4>Lancôme L'Absolu Rouge</h4>
+        <p>Шикарна помада з матовим і шовковистим фінішем.</p>
+        <p><strong>Ціна:</strong> 1500 грн</p>
+        <p><strong>Склад:</strong> Масло ши, антиоксиданти</p>
+        <button class="button" onclick="addToCart('Lancôme L\'Absolu Rouge', 1500)">Купити</button>
+      </div>
+
+      <!-- Пудри -->
+      <h3>Люксові пудри</h3>
+      <div class="product-card">
+        <img src="assets/luxury-powder1.jpg" alt="Chanel Les Beiges Healthy Glow Powder">
+        <h4>Chanel Les Beiges Healthy Glow Powder</h4>
+        <p>Легкий, природний ефект з матовим фінішем.</p>
+        <p><strong>Ціна:</strong> 1800 грн</p>
+        <p><strong>Склад:</strong> Пудра, екстракти рослин</p>
+        <button class="button" onclick="addToCart('Chanel Les Beiges Healthy Glow Powder', 1800)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-powder2.jpg" alt="Dior Diorskin Forever Powder">
+        <h4>Dior Diorskin Forever Powder</h4>
+        <p>Матуюча пудра з тривалим ефектом для бездоганної шкіри протягом усього дня.</p>
+        <p><strong>Ціна:</strong> 2200 грн</p>
+        <p><strong>Склад:</strong> Мінеральні компоненти, вітаміни</p>
+        <button class="button" onclick="addToCart('Dior Diorskin Forever Powder', 2200)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-powder3.jpg" alt="Guerlain Meteorites Powder">
+        <h4>Guerlain Meteorites Powder</h4>
+        <p>Сяюча пудра для створення натурального вигляду з ефектом сяйва.</p>
+        <p><strong>Ціна:</strong> 2500 грн</p>
+        <p><strong>Склад:</strong> Метеоритні перлини, антиоксиданти</p>
+        <button class="button" onclick="addToCart('Guerlain Meteorites Powder', 2500)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-powder4.jpg" alt="Charlotte Tilbury Airbrush Flawless Finish">
+        <h4>Charlotte Tilbury Airbrush Flawless Finish</h4>
+        <p>Пудра, що надає шкірі бездоганний вигляд, усуваючи блиск та недоліки.</p>
+        <p><strong>Ціна:</strong> 2100 грн</p>
+        <p><strong>Склад:</strong> Пудра з матуючим ефектом, екстракти рослин</p>
+        <button class="button" onclick="addToCart('Charlotte Tilbury Airbrush Flawless Finish', 2100)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-powder5.jpg" alt="By Terry Hyaluronic Hydra Powder">
+        <h4>By Terry Hyaluronic Hydra Powder</h4>
+        <p>Пудра з гіалуроновою кислотою для зволоження та довготривалого матування.</p>
+        <p><strong>Ціна:</strong> 2800 грн</p>
+        <p><strong>Склад:</strong> Гіалуронова кислота, антиоксиданти</p>
+        <button class="button" onclick="addToCart('By Terry Hyaluronic Hydra Powder', 2800)">Купити</button>
+      </div>
+      <!-- Консилери -->
+      <h3>Люксові консилери</h3>
+      <div class="product-card">
+        <img src="assets/luxury-concealer1.jpg" alt="NARS Radiant Creamy Concealer">
+        <h4>NARS Radiant Creamy Concealer</h4>
+        <p>Консилер для усунення недоліків з ефектом сяйва та бездоганним покриттям.</p>
+        <p><strong>Ціна:</strong> 1600 грн</p>
+        <p><strong>Склад:</strong> Вітаміни, пантенол</p>
+        <button class="button" onclick="addToCart('NARS Radiant Creamy Concealer', 1600)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-concealer2.jpg" alt="Tarte Shape Tape Concealer">
+        <h4>Tarte Shape Tape Concealer</h4>
+        <p>Відомий консилер з високим покриттям для довготривалої корекції.</p>
+        <p><strong>Ціна:</strong> 1800 грн</p>
+        <p><strong>Склад:</strong> Екстракти рослин, вітамін E</p>
+        <button class="button" onclick="addToCart('Tarte Shape Tape Concealer', 1800)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-concealer3.jpg" alt="IT Cosmetics Bye Bye Under Eye Concealer">
+        <h4>IT Cosmetics Bye Bye Under Eye Concealer</h4>
+        <p>Потужний консилер для усунення темних кіл під очима з натуральними компонентами.</p>
+        <p><strong>Ціна:</strong> 1700 грн</p>
+        <p><strong>Склад:</strong> Колаген, пептиди</p>
+        <button class="button" onclick="addToCart('IT Cosmetics Bye Bye Under Eye Concealer', 1700)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-concealer4.jpg" alt="Hourglass Vanish Concealer">
+        <h4>Hourglass Vanish Concealer</h4>
+        <p>Консилер, що має високу стійкість та покриття, ідеально підходить для шкіри.</p>
+        <p><strong>Ціна:</strong> 2000 грн</p>
+        <p><strong>Склад:</strong> Вітамін E, гіалуронова кислота</p>
+        <button class="button" onclick="addToCart('Hourglass Vanish Concealer', 2000)">Купити</button>
+      </div>
+      <!-- Тіні -->
+      <h3>Люксові тіні для повік</h3>
+      <div class="product-card">
+        <img src="assets/luxury-eyeshadow1.jpg" alt="Urban Decay Naked Palette">
+        <h4>Urban Decay Naked Palette</h4>
+        <p>Мультирівневі відтінки тіней для створення ефектних макіяжів.</p>
+        <p><strong>Ціна:</strong> 2400 грн</p>
+        <p><strong>Склад:</strong> Пігменти, вітаміни</p>
+        <button class="button" onclick="addToCart('Urban Decay Naked Palette', 2400)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-eyeshadow2.jpg" alt="Charlotte Tilbury Eyeshadow Palette">
+        <h4>Charlotte Tilbury Eyeshadow Palette</h4>
+        <p>Шикарна палітра для створення розкішних очей.</p>
+        <p><strong>Ціна:</strong> 2900 грн</p>
+        <p><strong>Склад:</strong> Пігменти, рослинні олії</p>
+        <button class="button" onclick="addToCart('Charlotte Tilbury Eyeshadow Palette', 2900)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-eyeshadow3.jpg" alt="Tom Ford Eye Color Quad">
+        <h4>Tom Ford Eye Color Quad</h4>
+        <p>Палетка для створення розкішних, глибоких відтінків.</p>
+        <p><strong>Ціна:</strong> 3400 грн</p>
+        <p><strong>Склад:</strong> Пігменти, рослинні олії</p>
+        <button class="button" onclick="addToCart('Tom Ford Eye Color Quad', 3400)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-eyeshadow4.jpg" alt="Dior 5 Couleurs Eyeshadow Palette">
+        <h4>Dior 5 Couleurs Eyeshadow Palette</h4>
+        <p>Палетка для створення багатошарових макіяжів із бездоганним покриттям.</p>
+        <p><strong>Ціна:</strong> 3100 грн</p>
+        <p><strong>Склад:</strong> Пігменти, вітаміни</p>
+        <button class="button" onclick="addToCart('Dior 5 Couleurs Eyeshadow Palette', 3100)">Купити</button>
+      </div>
+      <!-- Тональні креми -->
+      <h3>Люксові тональні креми</h3>
+      <div class="product-card">
+        <img src="assets/luxury-foundation1.jpg" alt="Giorgio Armani Luminous Silk Foundation">
+        <h4>Giorgio Armani Luminous Silk Foundation</h4>
+        <p>Легкий і зволожуючий тональний крем, який забезпечує природне сяйво.</p>
+        <p><strong>Ціна:</strong> 3500 грн</p>
+        <p><strong>Склад:</strong> Гіалуронова кислота, антиоксиданти</p>
+        <button class="button" onclick="addToCart('Giorgio Armani Luminous Silk Foundation', 3500)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-foundation2.jpg" alt="Chanel Vitalumière Aqua">
+        <h4>Chanel Vitalumière Aqua</h4>
+        <p>Легкий, зволожуючий тональний крем, що дарує природний вигляд і сяйво.</p>
+        <p><strong>Ціна:</strong> 3100 грн</p>
+        <p><strong>Склад:</strong> Вітамін E, гіалуронова кислота</p>
+        <button class="button" onclick="addToCart('Chanel Vitalumière Aqua', 3100)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-foundation3.jpg" alt="Dior Forever Foundation">
+        <h4>Dior Forever Foundation</h4>
+        <p>Тональний крем з високим покриттям та стійким ефектом, для бездоганної шкіри протягом дня.</p>
+        <p><strong>Ціна:</strong> 3300 грн</p>
+        <p><strong>Склад:</strong> Вітаміни, пантенол</p>
+        <button class="button" onclick="addToCart('Dior Forever Foundation', 3300)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-foundation4.jpg" alt="Estée Lauder Double Wear Stay-in-Place Makeup">
+        <h4>Estée Lauder Double Wear Stay-in-Place Makeup</h4>
+        <p>Тональний крем, який надає шкірі матовий фініш і стійкість на весь день.</p>
+        <p><strong>Ціна:</strong> 2500 грн</p>
+        <p><strong>Склад:</strong> Вітамін E, гліцерин</p>
+        <button class="button"
+          onclick="addToCart('Estée Lauder Double Wear Stay-in-Place Makeup', 2500)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-foundation5.jpg" alt="Lancôme Teint Idole Ultra Wear">
+        <h4>Lancôme Teint Idole Ultra Wear</h4>
+        <p>Тональний крем, який забезпечує довготривалий ефект і природне сяйво.</p>
+        <p><strong>Ціна:</strong> 2900 грн</p>
+        <p><strong>Склад:</strong> Вітамін E, екстракти рослин</p>
+        <button class="button" onclick="addToCart('Lancôme Teint Idole Ultra Wear', 2900)">Купити</button>
+      </div>
+      <!-- Туші -->
+      <h3>Люксові туші</h3>
+      <div class="product-card">
+        <img src="assets/luxury-mascara1.jpg" alt="Chanel Le Volume de Chanel Mascara">
+        <h4>Chanel Le Volume de Chanel Mascara</h4>
+        <p>Туш, яка додає об'єм і довжину вашим віїм, створюючи виразний погляд.</p>
+        <p><strong>Ціна:</strong> 1600 грн</p>
+        <p><strong>Склад:</strong> Вітамін E, пантенол</p>
+        <button class="button" onclick="addToCart('Chanel Le Volume de Chanel Mascara', 1600)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-mascara2.jpg" alt="Dior Diorshow Mascara">
+        <h4>Dior Diorshow Mascara</h4>
+        <p>Туш для об'єму і довжини вій, що забезпечує вражаючий ефект.</p>
+        <p><strong>Ціна:</strong> 1900 грн</p>
+        <p><strong>Склад:</strong> Рослинні олії, вітаміни</p>
+        <button class="button" onclick="addToCart('Dior Diorshow Mascara', 1900)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-mascara3.jpg" alt="Yves Saint Laurent Mascara Volume Effect Faux Cils">
+        <h4>Yves Saint Laurent Mascara Volume Effect Faux Cils</h4>
+        <p>Туш для створення ілюзії об'ємних, густих вій з ефектом накладних вій.</p>
+        <p><strong>Ціна:</strong> 2300 грн</p>
+        <p><strong>Склад:</strong> Вітамін E, екстракти рослин</p>
+        <button class="button"
+          onclick="addToCart('Yves Saint Laurent Mascara Volume Effect Faux Cils', 2300)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-mascara4.jpg" alt="Lancôme Hypnôse Drama Mascara">
+        <h4>Lancôme Hypnôse Drama Mascara</h4>
+        <p>Туш для створення драматичного об'єму і довжини вій.</p>
+        <p><strong>Ціна:</strong> 2000 грн</p>
+        <p><strong>Склад:</strong> Гіалуронова кислота, пантенол</p>
+        <button class="button" onclick="addToCart('Lancôme Hypnôse Drama Mascara', 2000)">Купити</button>
+      </div>
+      <div class="product-card">
+        <img src="assets/luxury-mascara5.jpg" alt="Tom Ford Extreme Mascara">
+        <h4>Tom Ford Extreme Mascara</h4>
+        <p>Туш, яка додає об'єм і глибину погляду, не залишаючи слідів.</p>
+        <p><strong>Ціна:</strong> 2700 грн</p>
+        <p><strong>Склад:</strong> Вітамін E, екстракти рослин</p>
+        <button class="button" onclick="addToCart('Tom Ford Extreme Mascara', 2700)">Купити</button>
+      </div>
+
     </div>
   </section>
-  <section id="about-us">
-    <h2>Про нас</h2>
-    <p>Ми-команда,яка створює косметику для кожного.Якість і природні компоненти-наш головний пріорітет.</p>
-  </section>
-  <section id="subscribe">
-   <h2>Підпишіться на нас</h2>
-  </section>
-</main>
-<footer>
-  <p>&copy; 2024 Магазин косметики</p>
-</footer>
+
+  <footer>
+    <p>&copy; 2024 Beautify. Всі права захищено.</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(productName, price) {
+      cart.push({ name: productName, price: price });
+      alert(`${productName} додано до кошика!`);
+    }
+
+    function searchProducts() {
+      const searchInput = document.getElementById("search-input").value.toLowerCase();
+      const products = document.querySelectorAll(".product-card");
+      products.forEach(product => {
+        const productName = product.querySelector("h4").textContent.toLowerCase();
+        if (productName.includes(searchInput)) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    }
+  </script>
 </body>
 
 </html>
