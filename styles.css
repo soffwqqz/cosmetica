@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
 }
 
@@ -17,6 +17,7 @@ h3,
 h4 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 header {
     background-color: #ff6b6b;
@@ -49,11 +50,13 @@ nav a.active {
     padding-bottom: 5px;
 }
 
+
 #products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    gap: 30px;
     padding: 30px;
+    justify-items: center;
 }
 
 .product {
@@ -61,25 +64,35 @@ nav a.active {
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease-in-out;
     text-align: center;
+    position: relative;
     cursor: pointer;
+    padding: 10px;
 }
 
 .product:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border: 2px solid #ff6b6b;
 }
 
 .product img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product img:hover {
+    transform: scale(1.1);
 }
 
 .product h4 {
     font-size: 1.2rem;
     margin: 15px 0;
+    color: #333;
 }
 
 .product p {
@@ -91,7 +104,7 @@ nav a.active {
     background-color: #ff6b6b;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -102,10 +115,11 @@ nav a.active {
     background-color: #ff3b3b;
 }
 
+
 #special-offer {
     background-color: #ff6b6b;
     color: white;
-    padding: 30px;
+    padding: 40px 20px;
     text-align: center;
     margin: 40px 0;
     border-radius: 10px;
@@ -136,6 +150,7 @@ nav a.active {
     color: white;
 }
 
+
 footer {
     background-color: #333;
     color: white;
@@ -149,7 +164,7 @@ footer p {
     margin: 0;
 }
 
-/* Адаптивність */
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
