@@ -28,16 +28,17 @@
     </footer>
 
     <script>
-      
+        
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+       
         function updateCart() {
             const cartItemsDiv = document.getElementById('cart-items');
             cartItemsDiv.innerHTML = '';
 
             let totalAmount = 0;
 
-           
+            
             cart.forEach(item => {
                 const productDiv = document.createElement('div');
                 productDiv.classList.add('cart-item');
@@ -50,7 +51,7 @@
                 totalAmount += item.price;
             });
 
-            
+           
             document.getElementById('total-amount').textContent = `${totalAmount} грн`;
         }
 
@@ -74,7 +75,7 @@
             }
         });
 
-       
+        
         updateCart();
     </script>
 </body>
