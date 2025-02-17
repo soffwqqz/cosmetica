@@ -314,31 +314,6 @@
     <p>&copy; 2024 Beautify. Всі права захищено.</p>
   </footer>
 
-  <script>
-    
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    
-    function addToCart(productName, price) {
-      cart.push({ name: productName, price: price });
-      localStorage.setItem('cart', JSON.stringify(cart)); 
-      alert(`${productName} додано до кошика!`);
-    }
-
-  
-    function searchProducts() {
-      const searchInput = document.getElementById("search-input").value.toLowerCase();
-      const products = document.querySelectorAll(".product-card");
-      products.forEach(product => {
-        const productName = product.querySelector("h4").textContent.toLowerCase();
-        if (productName.includes(searchInput)) {
-          product.style.display = "block";
-        } else {
-          product.style.display = "none";
-        }
-      });
-    }
-  </script>
 </body>
 
 </html>
