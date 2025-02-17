@@ -1,2 +1,2 @@
-# cosmetica
+# cosmetic
 сайт косметики
