@@ -249,3 +249,6 @@ footer p {
     text-align: left;
     padding: 10px;
 }
+.product-card img {
+width: 150px;
+}
